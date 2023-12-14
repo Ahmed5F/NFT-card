@@ -2,26 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
-  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+
   <title>Frontend Mentor | NFT preview card component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    body{
+    body {
       background-color: #0d1a2d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
     }
-    .flex-container{
+
+    .flex-container {
       display: flex;
       flex-direction: column;
-      position: absolute;
-      top: 12.5%;
-      left: 40%;
       width: 300px;
       background-color: #15273f;
       padding: 22px;
@@ -29,24 +31,25 @@
       font-family: 'Outfit', sans-serif;
       font-size: medium;
     }
-    
-    #equlibrium-image{
+
+    #equlibrium-image {
       border-radius: 0.5rem;
       margin-bottom: 5px;
     }
-    .container{
+
+    .container {
       position: relative;
-      width: 300px;
+      width: 100%;
       height: 300px;
-      
     }
-    .container>img{
+
+    .container > img {
       width: 100%;
       height: 100%;
       border-radius: 7px;
-
     }
-    .on-hover{
+
+    .on-hover {
       display: flex;
       background-color: #46dee5;
       position: absolute;
@@ -55,115 +58,123 @@
       left: 0;
       bottom: 0;
       opacity: 0;
-      mix-blend-mode:hard-light;
+      mix-blend-mode: hard-light;
       transition: 400ms;
-
-
       border-radius: 7px;
-
     }
-    .container:hover .on-hover{
+
+    .container:hover .on-hover {
       opacity: 1;
       cursor: pointer;
-
     }
-    .on-hover img{
+
+    .on-hover img {
       display: block;
       margin: auto;
-      
     }
-    h2{
+
+    h2 {
       color: white;
-      /* font-family: 'Libre Baskerville', serif; */
       font-family: 'Outfit', sans-serif;
-      font-weight:400;
-      font-size: 22px ;    
+      font-weight: 400;
+      font-size: 22px;
     }
-    .description{
+
+    .description {
       color: #8ca1c3;
       font-family: 'Libre Baskerville', serif;
       font-family: 'Outfit', sans-serif;
     }
-    h3, h4{
+
+    h3,
+    h4 {
       padding: 0;
       margin: 0;
       font-family: 'Outfit', sans-serif;
       font-size: medium;
     }
-    h3{
-      color: #46dee5;
 
+    h3 {
+      color: #46dee5;
     }
-    h4{
+
+    h4 {
       color: #8ca1c3;
       font-size: smaller;
       font-weight: 300;
-
     }
-    h3 >img, h4>img{
+
+    h3 > img,
+    h4 > img {
       padding-right: 7px;
       vertical-align: text-top;
-
     }
-    .flex-container-two{
+
+    .flex-container-two {
       display: flex;
       justify-content: space-between;
       border-bottom: 1px solid #8ca1c3c9;
       padding-bottom: 15px;
     }
-    .creation{
+
+    .creation {
       display: flex;
       padding-top: 5px;
       align-items: center;
-      
-
     }
-    .creation>p{
-    padding-left: 15px;
-    color: #8ca1c3;
 
+    .creation > p {
+      padding-left: 15px;
+      color: #8ca1c3;
     }
-    .creation >img{
+
+    .creation > img {
       width: 27px;
       height: 27px;
       border: 1px solid white;
       border-radius: 50%;
-      
-      
     }
-    .creation span{
-      color: white;
 
+    .creation span {
+      color: white;
     }
-    h2:hover, span:hover{
+
+    h2:hover,
+    span:hover {
       color: #46dee5;
       cursor: pointer;
     }
 
+    .attribution {
+  font-size: 11px;
+  text-align: center;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 10px; /* Adjust as needed for spacing */
+}
 
-    .attribution { font-size: 11px; text-align: center; color: white; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
   </style>
 </head>
 <body>
-<div class="flex-container"> 
-  <div class="container">  
-    <div class="on-hover"><img src="images/icon-view.svg"></div> 
-    <img src="images/image-equilibrium.jpg" alt="equilibrium" id="equlibrium-image"/>
+  <div class="flex-container">
+    <div class="container">
+      <div class="on-hover"><img src="images/icon-view.svg"></div>
+      <img src="images/image-equilibrium.jpg" alt="equilibrium" id="equlibrium-image"/>
+    </div>
+    <h2>Equilibrium #3429</h2>
+    <p class="description">Our Equilibrium collection promotes balance and calm.</p>
+    <div class="flex-container-two">
+      <h3> <img src="images/icon-ethereum.svg"/>0.041 ETH</h3>
+      <h4> <img src="images/icon-clock.svg">3 days left</h4>
+    </div>
+    <div class="creation"><img src="images/image-avatar.png"/><p>Creation of <span>Jules Wyvern</span></p></div>
   </div>
-  <h2>Equilibrium #3429</h2>
-
-  <p class="description">Our Equilibrium collection promotes balance and calm.</p>
-<div class="flex-container-two">
-  
-  <h3> <img src="images/icon-ethereum.svg"/>0.041 ETH</h3>
-  <h4> <img src="images/icon-clock.svg">3 days left</h4>
-  
-</div>
-<div class="creation"><img src="images/image-avatar.png"/><p>Creation of <span>Jules Wyvern</span></p></div>
-
-
-</div>
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
